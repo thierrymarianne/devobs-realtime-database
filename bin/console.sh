@@ -172,14 +172,9 @@ function install_dependencies() {
 alias install-deps='install_dependencies'
 
 function build_application() {
-    go build .
+    go build -o ./bin
 }
 alias build-application='build_application'
-
-function install_application() {
-    go install github.com/daily-press-review-golang
-}
-alias install-application='install_application'
 
 function migrate_publications() {
     local date
@@ -197,6 +192,6 @@ function migrate_publications() {
     aggregate_id=1;
 
     # Migrate statuses from the first aggregate
-    ./daily-press-review-golang -aggregate-id=${aggregate_id} -since-date="${date}" -in-parallel=true
+    ./bin/devobs-realtime-database -aggregate-id=${aggregate_id} -since-date="${date}" -in-parallel=true
 }
 alias migrate-publications='migrate_publications'

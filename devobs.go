@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	_ "github.com/go-sql-driver/mysql"
+	_ "github.com/lib/pq"
 	"github.com/remeh/sizedwaitgroup"
 	_ "github.com/remeh/sizedwaitgroup"
 	_ "github.com/ti/nasync"

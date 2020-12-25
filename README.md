@@ -1,21 +1,9 @@
 # DevObs
 
-## Dependencies
-
-```
-make install-dependencies
-```
-
 ## Build
 
 ```
 make build
-```
-
-## Installation
-
-```
-make install
 ```
 
 ## Migrate publications

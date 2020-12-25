@@ -31,8 +31,5 @@ build: ## Build application
 install: ## Install application
 	@/bin/bash -c 'source ./bin/console.sh && install_application'
 
-install-dependencies: ## Install project dependencies
-	@/bin/bash -c 'source ./bin/console.sh && install_dependencies'
-
 migrate-publications: ## Migrate publications
 	@/bin/bash -c 'source ./bin/console.sh && migrate_publications'

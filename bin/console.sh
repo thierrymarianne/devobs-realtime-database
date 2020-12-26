@@ -188,10 +188,18 @@ function migrate_publications() {
        return 1
     fi
 
-    local aggregate_id;
-    aggregate_id=1;
+    local publishers_list_id
+    publishers_list_id="${PUBLISHERS_LIST_ID}"
+
+    if [ -z "${publishers_list_id}" ];
+    then
+       echo 'Please pass a valid publishers list id e.g.'
+       echo 'export PUBLISHERS_LIST_ID="89f6db28-4d4e-49dc-a2c6-b6bb0e7b12af"'
+
+       return 1
+    fi
 
     # Migrate statuses from the first aggregate
-    ./bin/devobs-realtime-database -aggregate-id=${aggregate_id} -since-date="${date}" -in-parallel=true
+    ./bin/devobs-realtime-database -publishers-list-id="${publishers_list_id}" -since-date="${date}" -in-parallel=true
 }
 alias migrate-publications='migrate_publications'
